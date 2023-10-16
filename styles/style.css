@@ -308,7 +308,7 @@ fieldset {
   outline: 1px solid #FFF; 
 }
 
-.result__video-container .preloader {
+.result__video .preloader {
   content: ''; 
   position: relative;
   width: inherit;
