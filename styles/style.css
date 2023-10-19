@@ -95,7 +95,6 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  /* width: 200px; */
 }
 
 .content__details {
@@ -124,7 +123,7 @@ ol {
 
 .content__list-item {
   margin-bottom: 30px;
-
+  display: inline-block;
 }
 
 .search-form {
@@ -214,6 +213,7 @@ fieldset {
   flex-direction: row;
   width: fit-content;
   color: #FFF;
+  cursor: pointer;
 }
 
 .search-form__textfield {
@@ -223,7 +223,6 @@ fieldset {
   border-top: 1px solid #FFF;
   border-bottom: 1px solid #FFF;
   background-color: inherit;
-  cursor: pointer;
   color: rgba(255, 255, 255, 0.70);
   font-family: Fira Sans Condensed;
   font-size: 18px;
@@ -259,7 +258,7 @@ fieldset {
   text-decoration-line: underline;
 }
 
-.search-form__label:hover {
+.search-form__label:hover .search-form__label-text { 
   text-decoration: underline;
 }
 
@@ -267,13 +266,18 @@ fieldset {
   text-decoration: underline;
 }
 
-.content__video-card-description-container:focus {
+.search-form__textfield::placeholder {
+  text-decoration-line: none;
+  cursor: pointer;
+}
+
+.content__video-card:focus {
   outline: none;
 }
 
-.content__video-card-description-container:focus-visible {
-  outline: 15px solid lightpink;
-  outline-offset: 2px;
+.content__video-card:focus-visible {
+  outline: 15px solid red;
+  outline-offset: 0;
 }
 
 .content__card-link_current {
@@ -306,18 +310,11 @@ fieldset {
 
 .button:focus-visible {
   outline: 1px solid #FFF; 
+  outline-offset: 2px;
 }
 
-.result__video .preloader {
+.result__video .preloader, .content__list .preloader {
   content: ''; 
-  position: relative;
-  width: inherit;
-  height: inherit;
-  box-sizing: border-box;
-}
-
-.content__list .preloader {
-  content: '';
   position: relative;
   width: inherit;
   height: inherit;
@@ -332,16 +329,5 @@ fieldset {
   width: 14px;
   height: 14px;
   background-color: #fff;
-  margin: 1.5px 1.5px;
-}
-
-.content__card-link + .content__card-link_current {
-  content: "";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 14px;
-  height: 14px;
-  background-color: #545050;
   margin: 1.5px 1.5px;
 }
